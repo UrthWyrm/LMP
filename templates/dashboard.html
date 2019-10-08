@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id"
+    content="235781441298-hnclkvvfektf92r4pp06r2mfgj5kh0kq.apps.googleusercontent.com">
+
+
+  <title>LikeMyPics Login</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/landing-page.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/landing-page.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css') }}">
+  <!-- <script src="{{  url_for('static', filename='js/script.js') }}"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+
+  <script>
+    console.log("in the start function")
+    function start() {
+      gapi.load('auth2', function () {
+        auth2 = gapi.auth2.init({
+          client_id: '235781441298-hnclkvvfektf92r4pp06r2mfgj5kh0kq.apps.googleusercontent.com',
+          // Scopes to request in addition to 'profile' and 'email'
+          //scope: 'additional_scope'
+        });
+      });
+    }
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+  <title>Like My Pic</title>
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/LikeMyPics">LikeMyPics </a>
+      <a class="btn btn-primary" href="/endsession/{{session['id']}}">Logout</a>
+      <a class="btn btn-primary" href="/LikeMyPics/dashboard/{{ session['id'] }}">Dashboard</a>
+    </div>
+  </nav>
+
+ 
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5"></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Icons Grid -->
+
+
+
+  <!-----------Registration------------------------------------------>
+  <div class="row p-4 pl-4 pr-4">
+    <div class="container col-lg-6 col-sm-12">
+      <!-- ------------------------------------------------------------------ -->
+
+    </div>
+
+  </div>
+  <a href="https://api.instagram.com/oauth/authorize/?client_id=b01b5772ca9645c49cb374febc690a0b&redirect_uri=http://localhost:5000/LikeMyPics/dashboard.html&response_type=code"
+    type="button" class="btn btn-block btn-lg btn-primary">Login with Instagram</button>
+  </a>
+
+  <!-- Icons Grid -->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-screen-desktop m-auto text-primary"></i>
+            </div>
+            <h3>Click To Start The Bot</h3>
+            
+            <button><a class="bold" href="/exec">Run Bot</a></button>
+  <script>
+    function runOnPython() {
+      window.open("bot.py")
+    }
+  </script>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-layers m-auto text-primary"></i>
+            </div>
+            <h3>Number of Pics Liked:</h3>
+            <p class="lead mb-0">0</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-check m-auto text-primary"></i>
+            </div>
+            <h3>Click To Stop The Bot</h3>
+            <button><a class="bold" href="/exec">End Bot</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer col-12 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item"></li>
+            <li class="list-inline-item">
+              <a href="/LikeMyPics/contact">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="/LikeMyPics/terms">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="/LikeMyPics/privacy">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; LikeMyPics 2019. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-12 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!--------------Google scripts---------------------------------------------------->
+  <script>
+  </script>
+
+</body>
+
+</html>

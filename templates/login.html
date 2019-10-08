@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="235781441298-hnclkvvfektf92r4pp06r2mfgj5kh0kq.apps.googleusercontent.com">
+
+
+  <title>LikeMyPics Login</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/landing-page.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/landing-page.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css') }}">
+  <!-- <script src="{{  url_for('static', filename='js/script.js') }}"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.js"
+  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+  crossorigin="anonymous"></script>
+
+<script>
+  console.log("in the start function")
+  function start() {
+    gapi.load('auth2', function() {
+      auth2 = gapi.auth2.init({
+        client_id: '235781441298-hnclkvvfektf92r4pp06r2mfgj5kh0kq.apps.googleusercontent.com',
+        // Scopes to request in addition to 'profile' and 'email'
+        //scope: 'additional_scope'
+      });
+    });
+  }
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+  <title>Like My Pic</title>
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/LikeMyPics">LikeMyPics </a>
+    </div>
+    <a class="btn btn-primary ml-6" href="/LikeMyPics/dashboard/{{ session['id'] }}">Dashboard</a>
+  </nav>
+
+  <script>
+    $(document).ready(function(){
+      console.log("on page load")
+    })
+  </script>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5"></h1>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Icons Grid -->
+
+
+
+  <!-----------Registration------------------------------------------>
+  <div class="row p-4 pl-4 pr-4">
+    <div class="container col-lg-6 col-sm-12">
+      <form action="/registration" method="POST" id="regForm">
+        <h1>Register Here</h1>
+        <div class="form-group">
+          <!-------------------Input First Name---------------------------------------------------->
+          <label for="first_name" name="fname">First Name</label>
+          <input type="text" class="form-control" id="first_name" aria-describedby="fnamehelp"
+            placeholder="Enter Your First Name" name="fname">
+          {% with fname = get_flashed_messages(category_filter=["fnametoolittle"]) %}
+          {% if fname %}
+          {% for message in fname %}
+          <p>{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+        </div>
+        <!-------------------Input Last Name---------------------------------------------------->
+        <label for="last_name" name="lname">Last Name</label>
+        <input type="text" class="form-control" id="last_name" aria-describedby="lnameHelp"
+          placeholder="Enter Your Last Name" name="lname">
+        {% with lname = get_flashed_messages(category_filter=["lnametoolittle"]) %}
+        {% if lname %}
+        {% for message in lname%}
+        <p>{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <!-------------------Input Email---------------------------------------------------->
+        <div id="emailnameMsg"></div>
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="input_email" aria-describedby="emailHelp" placeholder="Enter email"
+          name="email">
+        {% with email = get_flashed_messages(category_filter=["emailtoolittle"]) %}
+        {% if email %}
+        {% for message in email%}
+        <p>{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+          else.</small>
+        <!-------------------Input Password---------------------------------------------------->
+        <label for="pass">Password</label>
+        <input type="password" class="form-control" id="input_password" placeholder="Password" name="pass">
+        {% with pass = get_flashed_messages(category_filter=["pickpassword"]) %}
+        {% if pass %}
+        {% for message in pass %}
+        <p>{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <!-------------------Confirm Password---------------------------------------------------->
+        <label for="cpass">Confirm Password</label>
+        <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" name="cpass">
+        {% with cpass = get_flashed_messages(category_filter=["confpw"]) %}
+        {% if cpass %}
+        {% for message in cpass %}
+        <p>{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <!-- ------------------------------------------------------------------ -->
+
+    </div>
+
+    
+
+    <div class="container col-lg-6 col-sm-12">
+      <!-- Logging In----------------------------------------------------------------------- -->
+      <form action="/processlogin" , method="POST">
+        <h1>Login Here</h1>
+        {% with email = get_flashed_messages(category_filter=["loginhere"]) %}
+        {% if email %}
+        {% for message in email%}
+        <p>{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <div class="form-group">
+          <!-------------------Email---------------------------------------------------->
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="input_email" aria-describedby="emailHelp"
+            placeholder="Enter email" name="email">
+          {% with email = get_flashed_messages(category_filter=["emailwrong"]) %}
+          {% if email %}
+          {% for message in email%}
+          <p>{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+            else.</small>
+          <!-------------------Password---------------------------------------------------->
+          <label for="pass">Password</label>
+          <input type="password" class="form-control" id="input_password" placeholder="Password" name="pass">
+          {% with pass = get_flashed_messages(category_filter=["passwordwrong"]) %}
+          {% if pass %}
+          {% for message in pass %}
+          <p>{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <!-- --------------------------------------------------------------------------------- -->
+      </form>
+      <!-- Google Login Options -->
+      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+      <script>
+        $(document).ready(function() {
+          $('.g-signin2').click(function() {
+            console.log('.g-signin2 clicked');
+            // signInCallback defined in step 6.
+            auth2.grantOfflineAccess().then((authResult) => {
+              console.log('grantOfflineAccess callback')
+                console.log(authResult);
+                if (authResult['code']) {
+              
+                  // Hide the sign-in button now that the user is authorized, for example:
+                  $('.g-signin2').attr('style', 'display: none');
+              
+                  // Send the code to the server
+                  $.ajax({
+                    type: 'POST',
+                    url: '/logintogoogle',
+                    // Always include an `X-Requested-With` header in every AJAX request,
+                    // to protect against CSRF attacks.
+                    headers: {
+                      'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    contentType: 'application/octet-stream; charset=utf-8',
+                    success: function(result) {
+                      // Handle or verify the server response.
+                    },
+                    processData: false,
+                    data: authResult['code']
+                  });
+                } else {
+                  // There was an error.
+                }
+              });
+          });
+     
+        });
+       function onSignIn(googleUser) {
+         var profile = googleUser.getBasicProfile();
+         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+         console.log('Name: ' + profile.getName());
+         console.log('Image URL: ' + profile.getImageUrl());
+         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+     }
+     </script>
+
+    <!---Google Logout------------------------------------------------------------------------------->
+    <a href="/LikeMyPics" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer col-12 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+          
+            <li class="list-inline-item"></li>
+            <li class="list-inline-item">
+              <a href="/LikeMyPics/contact">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="/LikeMyPics/terms">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="/LikeMyPics/privacy">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; LikeMyPics 2019. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-12 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!--------------Google scripts---------------------------------------------------->
+  <script>
+      </script>
+
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id"
+    content="235781441298-hnclkvvfektf92r4pp06r2mfgj5kh0kq.apps.googleusercontent.com">
+
+
+  <title>LikeMyPics Login</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/landing-page.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/landing-page.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css') }}">
+  <!-- <script src="{{  url_for('static', filename='js/script.js') }}"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+
+  <script>
+    console.log("in the start function")
+    function start() {
+      gapi.load('auth2', function () {
+        auth2 = gapi.auth2.init({
+          client_id: '235781441298-hnclkvvfektf92r4pp06r2mfgj5kh0kq.apps.googleusercontent.com',
+          // Scopes to request in addition to 'profile' and 'email'
+          //scope: 'additional_scope'
+        });
+      });
+    }
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+  <title>Like My Pic</title>
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/LikeMyPics">LikeMyPics </a>
+      <a class="btn btn-primary" href="/LikeMyPics/login">Register</a>
+      <a class="btn btn-primary" href="/LikeMyPics/dashboard/{{ session['id'] }}">Dashboard</a>
+    </div>
+  </nav>
+
+  <script>
+    $(document).ready(function () {
+      console.log("on page load")
+    })
+  </script>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5"></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Icons Grid -->
+
+
+
+  <!-----------Registration------------------------------------------>
+  <div class="row p-4 pl-4 pr-4">
+    <div class="container col-lg-6 col-sm-12">
+      <!-- ------------------------------------------------------------------ -->
+
+    </div>
+
+  </div>
+  <div class="container">
+<h1 class= "bold">Terms and Conditions</h1>
+<p>
+Please read these terms and conditions carefully before using LikeMyPics.com website (the "service") operated by LikeMyPics.
+
+Conditions of Use
+
+We will provide our services to you, which are subject to the conditions stated below in this document. Every time you visit this website, use its services or make a purchase, you accept the following conditions. This is why we urge you to read them carefully.
+
+Privacy Policy
+
+Before you continue using our website we advise you to read our privacy policy <a href = "privacy.html"> privacy policy</a> regarding our user data collection. It will help you better understand our practices.
+
+Copyright
+
+Content published on this website (digital downloads, images, texts, graphics, logos) is the property of LikeMyPics and/or its content creators and protected by international copyright laws. The entire compilation of the content found on this website is the exclusive property of [name], with copyright authorship for this compilation by [name].
+
+Communications
+
+The entire communication with us is electronic. Every time you send us an email or visit our website, you are going to be communicating with us. You hereby consent to receive communications from us. If you subscribe to the news on our website, you are going to receive regular emails from us. We will continue to communicate with you by posting news and notices on our website and by sending you emails. You also agree that all notices, disclosures, agreements and other communications we provide to you electronically meet the legal requirements that such communications be in writing.
+
+Applicable Law
+
+By visiting this website, you agree that the laws of the [your location], without regard to principles of conflict laws, will govern these terms and conditions, or any dispute of any sort that might come between [name] and you, or its business partners and associates.
+
+Disputes
+
+Any dispute related in any way to your visit to this website or to products you purchase from us shall be arbitrated by state or federal court [your location] and you consent to exclusive jurisdiction and venue of such courts.
+
+Comments, Reviews, and Emails
+
+Visitors may post content as long as it is not obscene, illegal, defamatory, threatening, infringing of intellectual property rights, invasive of privacy or injurious in any other way to third parties. Content has to be free of software viruses, political campaign, and commercial solicitation.
+
+We reserve all rights (but not the obligation) to remove and/or edit such content. When you post your content, you grant LikeMyPics non-exclusive, royalty-free and irrevocable right to use, reproduce, publish, modify such content throughout the world in any media.
+
+License and Site Access
+
+We grant you a limited license to access and make personal use of this website. You are not allowed to download or modify it. This may be done only with written consent from us.
+
+User Account
+
+If you are an owner of an account on this website, you are solely responsible for maintaining the confidentiality of your private user details (username and password). You are responsible for all activities that occur under your account or password.
+
+We reserve all rights to terminate accounts, edit or remove content and cancel orders in their sole discretion.</p>
+</div>
+
+  <!-- Footer -->
+  <footer class="footer col-12 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="/LikeMyPics/terms">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="/LikeMyPics/privacy">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; LikeMyPics 2019. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-12 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!--------------Google scripts---------------------------------------------------->
+  <script>
+  </script>
+
+</body>
+
+</html>

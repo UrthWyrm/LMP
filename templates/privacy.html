@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id"
+    content="235781441298-hnclkvvfektf92r4pp06r2mfgj5kh0kq.apps.googleusercontent.com">
+
+
+  <title>LikeMyPics Login</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/landing-page.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/landing-page.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css') }}">
+  <!-- <script src="{{  url_for('static', filename='js/script.js') }}"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+
+  <script>
+    console.log("in the start function")
+    function start() {
+      gapi.load('auth2', function () {
+        auth2 = gapi.auth2.init({
+          client_id: '235781441298-hnclkvvfektf92r4pp06r2mfgj5kh0kq.apps.googleusercontent.com',
+          // Scopes to request in addition to 'profile' and 'email'
+          //scope: 'additional_scope'
+        });
+      });
+    }
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+  <title>Like My Pic</title>
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/LikeMyPics">LikeMyPics </a>
+      <a class="btn btn-primary" href="/LikeMyPics/login">Register</a>
+      <a class="btn btn-primary" href="/LikeMyPics/dashboard/{{ session['id'] }}">Dashboard</a>
+    </div>
+  </nav>
+
+  <script>
+    $(document).ready(function () {
+      console.log("on page load")
+    })
+  </script>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5"></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Icons Grid -->
+
+
+
+  <!-----------Registration------------------------------------------>
+  <div class="row p-4 pl-4 pr-4">
+    <div class="container col-lg-6 col-sm-12">
+      <!-- ------------------------------------------------------------------ -->
+
+    </div>
+
+  </div>
+  
+  <div class="container">
+
+    <h1 class="bold">Privacy Policy of LikeMyPics</h1>
+
+<p>LikeMyPics operates the LikeMyPics.com website, which provides the SERVICE.</p>
+
+<p>This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service, the LikeMyPics.com website.</p>
+
+<p>If you choose to use our Service, then you agree to the collection and use of information in relation with this policy. The Personal Information that we collect are used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
+
+<p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at LikeMyPics.com, unless otherwise defined in this Privacy Policy.</p>
+
+<h2>Information Collection and Use</h2>
+
+<p>For a better experience while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to your name, phone number, and postal address. The information that we collect will be used to contact or identify you.</p>
+
+<h2>Log Data</h2>
+
+<p>We want to inform you that whenever you visit our Service, we collect information that your browser sends to us that is called Log Data. This Log Data may include information such as your computer’s Internet Protocol ("IP") address, browser version, pages of our Service that you visit, the time and date of your visit, the time spent on those pages, and other statistics.</p>
+
+<h2>Cookies</h2>
+
+<p>Cookies are files with small amount of data that is commonly used an anonymous unique identifier. These are sent to your browser from the website that you visit and are stored on your computer’s hard drive.</p>
+
+<p>Our website uses these "cookies" to collection information and to improve our Service. You have the option to either accept or refuse these cookies, and know when a cookie is being sent to your computer. If you choose to refuse our cookies, you may not be able to use some portions of our Service.</p>
+
+<h2>Service Providers</h2>
+
+<p>We may employ third-party companies and individuals due to the following reasons:</p>
+
+<ul>
+    <li>To facilitate our Service;</li>
+    <li>To provide the Service on our behalf;</li>
+    <li>To perform Service-related services; or</li>
+    <li>To assist us in analyzing how our Service is used.</li>
+</ul>
+
+<p>We want to inform our Service users that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.</p>
+
+<h2>Security</h2>
+
+<p>We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
+
+<h2>Links to Other Sites</h2>
+
+<p>Our Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over, and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+
+<p>Children’s Privacy</p>
+
+<p>Our Services do not address anyone under the age of 13. We do not knowingly collect personal identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do necessary actions.</p>
+
+<h2>Changes to This Privacy Policy</h2>
+
+<p>We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately, after they are posted on this page.</p>
+
+<h2>Contact Us</h2>
+
+<p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.</p>
+</div>
+
+  <!-- Footer -->
+  <footer class="footer col-12 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            
+            <li class="list-inline-item"></li>
+            <li class="list-inline-item">
+              <a href="/LikeMyPics/contact">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="/LikeMyPics/terms">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="/LikeMyPics/privacy">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; LikeMyPics 2019. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-12 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!--------------Google scripts---------------------------------------------------->
+  <script>
+  </script>
+
+</body>
+
+</html>
