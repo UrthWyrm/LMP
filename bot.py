@@ -103,7 +103,7 @@ class InstagramBot:
 
 if __name__ == '__main__':
 
-    carlIG = InstagramBot("carlbishopphotography", "Sonic@02")
+    carlIG = InstagramBot(" *Your Username* ", " *Your Password* ")
     carlIG.login()
     hashtags = ['animals', 'wildlifephotography', 'wildlife', 'animalsofinstagram']
     tag = random.choice(hashtags)
